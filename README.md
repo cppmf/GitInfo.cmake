@@ -15,18 +15,17 @@ First add GetCPM.cmake module :
 
 ```bash
 mkdir cmake
-wget -O cmake/CPM.cmake https://raw.githubusercontent.com/cppmf/GetCPM.cmake/master/GetCPM.cmake
+wget -O cmake/GetCPM.cmake https://raw.githubusercontent.com/cppmf/GetCPM.cmake/master/GetCPM.cmake
 ```
 
 Then add the following lines to the project's `CMakeLists.txt`.
 
 
 ```bash
-# include GetCPM.cmake module
-include(cmake/CPM.cmake)
+# include CPM.cmake module
+include(cmake/GetCPM.cmake)
 
-# add GitInfo.cmake and tell where to find the root project
-# by specifying the GIT_INFO_SOURCE_DIR variable.
+# add GitInfo.cmake
 CPMAddPackage(
   NAME GitInfo.cmake
   GITHUB_REPOSITORY cppmf/GitInfo.cmake
@@ -45,7 +44,7 @@ variable | description
 ---------|------------
 GIT_DIR | path to the project .git directory
 GIT_IS_DIRTY | whether or not the working tree is dirty
-GIT_HEAD_BRANCH | name of the brack associated te HEAD
+GIT_HEAD_BRANCH | name of the branch associated to HEAD
 GIT_REVISION_HASH | current HEAD sha hash
 GIT_REVISION | shorten version of GIT_REVISION_HASH
 GIT_REVISION_NAME | name associated to GIT_REVISION_HASH
