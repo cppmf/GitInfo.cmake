@@ -1,8 +1,12 @@
 # ---------------------------------------------------------------------------- #
 # CppMF projects are designed to apply modern CMake practice.
 # As such, a decent CMake version is used to benefit from all new features.
+#
+# Check CMake Release Notes:
+#   https://cmake.org/cmake/help/latest/release/3.22.html
 # ---------------------------------------------------------------------------- #
-cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.21 FATAL_ERROR)
+
 
 # Add the directory containing the main CMakeLists file
 # and declare the output directory
