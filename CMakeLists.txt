@@ -2,6 +2,27 @@
 #
 # Copyright (c) 2020 C++ Modern Framework
 #
+# ---------------------------------------------------------------------------- #
+
+# ---------------------------------------------------------------------------- #
+# CppMF projects are designed to apply modern CMake practice.
+# As such, a decent CMake version is used to benefit from all new features.
+#
+# Check CMake Release Notes:
+#   https://cmake.org/cmake/help/latest/release/3.21.html
+# ---------------------------------------------------------------------------- #
+cmake_minimum_required(VERSION 3.21 FATAL_ERROR)
+
+# ---------------------------------------------------------------------------- #
+# Project configuration
+# ---------------------------------------------------------------------------- #
+project(
+  GitInfo.cmake
+  LANGUAGES C CXX
+)
+
+# ---------------------------------------------------------------------------- #
+#
 # Following variables will be set when calling GitInfo
 #
 #   GIT_DIR: path to the project .git directory
@@ -23,7 +44,6 @@
 #   GIT_LATEST_TAG : most recent tagname of the current branch
 #
 # ---------------------------------------------------------------------------- #
-
 
 # This is the main function to call in project CMakeLists.txt
 # source should point to the root project directory
