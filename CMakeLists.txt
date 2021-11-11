@@ -5,23 +5,6 @@
 # ---------------------------------------------------------------------------- #
 
 # ---------------------------------------------------------------------------- #
-# CppMF projects are designed to apply modern CMake practice.
-# As such, a decent CMake version is used to benefit from all new features.
-#
-# Check CMake Release Notes:
-#   https://cmake.org/cmake/help/latest/release/3.21.html
-# ---------------------------------------------------------------------------- #
-cmake_minimum_required(VERSION 3.21 FATAL_ERROR)
-
-# ---------------------------------------------------------------------------- #
-# Project configuration
-# ---------------------------------------------------------------------------- #
-project(
-  GitInfo.cmake
-  LANGUAGES C CXX
-)
-
-# ---------------------------------------------------------------------------- #
 #
 # Following variables will be set when calling GitInfo
 #
@@ -182,8 +165,8 @@ function(GitInfo source)
 endfunction()
 
 
-# Display info
-function(GitInfoInfo)
+# Report git information
+function(GitInfoReport)
   message(STATUS "")
   message(STATUS "----------------------------------------------------")
   message(STATUS "                 GitInfo.cmake")

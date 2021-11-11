@@ -7,10 +7,11 @@
 # ---------------------------------------------------------------------------- #
 cmake_minimum_required(VERSION 3.21 FATAL_ERROR)
 
+# Make use of GetCPM.cmake
+include(${CMAKE_CURRENT_LIST_DIR}/cmake/GetCPM.cmake)
 
-# Add the directory containing the main CMakeLists file
-# and declare the output directory
-add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/.. ${CMAKE_CURRENT_BINARY_DIR}/GitInfoCmake)
+# Add Version.cmake package
+CPMAddPackage(NAME GitInfo.cmake SOURCE_DIR ${CMAKE_CURRENT_LIST_DIR}/..)
 
 
 # ---------------------------------------------------------------------------- #
@@ -23,7 +24,7 @@ GitInfo(${CMAKE_CURRENT_SOURCE_DIR}/..)
 # Project configuration
 # ---------------------------------------------------------------------------- #
 project(
-  test_app
+  TestApp
   VERSION 1.0.0
   LANGUAGES CXX
 )
@@ -33,7 +34,7 @@ project(
 # Display git info
 # ---------------------------------------------------------------------------- #
 if(GIT_INFO_CMAKE_INFO)
-  GitInfoInfo()
+  GitInfoReport()
 endif()
 
 
@@ -41,10 +42,10 @@ endif()
 # Pass definition to compiler
 # ---------------------------------------------------------------------------- #
 if(GIT_REVISION)
-    add_definitions(-DGIT_REVISION="${GIT_REVISION}")
+  add_definitions(-DGIT_REVISION="${GIT_REVISION}")
 endif()
 if(GIT_REVISION_NAME)
-    add_definitions(-DGIT_REVISION_NAME="${GIT_REVISION_NAME}")
+  add_definitions(-DGIT_REVISION_NAME="${GIT_REVISION_NAME}")
 endif()
 
 
